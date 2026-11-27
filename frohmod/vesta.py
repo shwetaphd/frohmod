@@ -11,7 +11,7 @@ import sys
 
 import numpy as np
 
-longest = 0.5  # length of the longest arrow, in A
+longest = 1.0  # length of the longest arrow, in A
 
 
 def ascii_to_vesta(ascii_file, vesta_in, vesta_out):
