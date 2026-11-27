@@ -2,6 +2,10 @@
 
 **Which longitudinal optical (LO) phonon modes govern Fröhlich scattering, and which atoms contribute to their vibrations?**
 
+<p align="center">
+  <img src="assets/logo.svg" alt="frohmod" width="420">
+</p>
+
 `frohmod` is a Python-based tool for performing mode-resolved analysis of Fröhlich (polar-optical phonon) scattering using phonon and dielectric properties obtained from VASP calculations.
 
 The code incorporates the direction-dependent non-analytical correction to account for LO–TO splitting and decomposes the Fröhlich scattering into contributions from individual LO phonon modes and constituent elements. It identifies which LO modes dominate carrier–phonon scattering and quantifies the contribution of each atomic species to the corresponding phonon vibrations.
