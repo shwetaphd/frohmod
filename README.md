@@ -6,6 +6,8 @@
   <img src="assets/logo.svg" alt="frohmod" width="420">
 </p>
 
+[![DOI](https://zenodo.org/badge/DOI/10.5281/zenodo.24598595.svg)](https://doi.org/10.5281/zenodo.24598595)
+
 `frohmod` is a Python-based tool for performing mode-resolved analysis of Fröhlich (polar-optical phonon) scattering using phonon and dielectric properties obtained from VASP calculations.
 
 The code incorporates the direction-dependent non-analytical correction to account for LO–TO splitting and decomposes the Fröhlich scattering into contributions from individual LO phonon modes and constituent elements. It identifies which LO modes dominate carrier–phonon scattering and quantifies the contribution of each atomic species to the corresponding phonon vibrations.
