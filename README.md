@@ -60,11 +60,6 @@ frohmod --phonon sc/vasprun.xml --dielectric-born unit/vasprun.xml --q 0 0 1 --a
 | `--vesta` | With `--anime`: also draw each mode as arrows in VESTA. Give the POSCAR of the same calculation, opened in VESTA and saved as a `.vesta` file. |
 | `--plot` | Save the figures: `--plot modes` (modes.png, \|g\|² × n of every LO mode, split by element), `--plot elements` (elements.png, each element's share), or `--plot` alone for both. |
 
-### Supercell calculations
-
-For supercell calculations, the primitive unit cell is reconstructed by dividing the `--phonon` cell according to `--dim`. Without `--dim`, the supercell size is found from the structure (the translations that map every atom onto an atom of the same element), and printed.
-
-The force constants are folded back onto the unit cell at Γ, following the phonopy approach. Atomic positions are used to match atoms between the supercell and unit cell, so the atomic ordering in the supercell does not need to be identical.
 
 ### Output files
 
@@ -316,50 +311,6 @@ C_X
 \frac{\sum_{\hat{\mathbf q}}\sum_\nu G_\nu P_\nu(X)}
 {\sum_{\hat{\mathbf q}}\sum_\nu G_\nu}
 ```
-
-### Validation against phonopy
-
-The non-analytical correction implemented in step 2 follows the same formalism used by phonopy and by VASP with `LPHON_POLAR`.
-
-For BiOBr, `frohmod` reproduces the phonopy analysis of the same calculation exactly.
-
-### Born effective charges and BORN file generation
-
-The code can generate a phonopy-compatible `BORN` file directly from VASP output.
-
-The file contains:
-
-- Line 1: Comment naming the symmetry-independent atoms (e.g. `# epsilon and Z* of atoms 1 3 5`).
-- Line 2: High-frequency dielectric tensor, $\varepsilon_\infty$, as nine numbers.
-- Subsequent lines: Born effective charge tensors, with nine numbers per symmetry-independent atom.
-
-The Born effective charges of the remaining atoms are obtained by applying the appropriate symmetry operations.
-
-Crystal symmetry is identified using spglib with the same tolerance as phonopy ($10^{-5}$).
-
-When generating the BORN file, `frohmod` follows the procedure used by `phonopy-vasp-born`:
-
-- Enforces charge neutrality by ensuring that the sum of Born effective charges is zero.
-- Averages Born effective charges over symmetry-equivalent atoms.
-- Lists the symmetry-independent atoms on the first line.
-
-## Validation and error handling
-
-`frohmod` includes checks to identify incomplete or inconsistent input data.
-
-The code stops with a clear error message in cases such as:
-
-- Missing or incomplete input files.
-- Absence of phonon frequencies or Born effective charges.
-- Incompatible supercell dimensions specified through `--dim`.
-- A BORN file that does not match the input structure.
-
-It also provides warnings when:
-
-- The sum of Born effective charges deviates from charge neutrality.
-- The static dielectric constant reconstructed from the phonon modes differs from VASP's `epsilon_ion` by more than 10%.
-- The cell still holds several copies of a smaller cell after folding (`--dim` too small).
-- Imaginary phonon modes are present. These modes are excluded from the analysis.
 
 ## Notes and limitations
 
