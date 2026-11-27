@@ -1,0 +1,26 @@
+[build-system]
+requires = ["setuptools>=77"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "frohmod"
+version = "0.1.0"
+description = "This repository identifies the longitudinal optical (LO) phonon modes responsible for Fröhlich scattering and analyzes the atomic displacements associated with each mode using VASP."
+readme = "README.md"
+license = "MIT"
+license-files = ["LICENSE"]
+authors = [{name = "Shweta Choudhary"}]
+requires-python = ">=3.9"
+dependencies = ["numpy>=1.21", "spglib>=2.0"]
+
+[project.optional-dependencies]
+plot = ["matplotlib>=3.5"]
+
+[project.urls]
+Repository = "https://github.com/shwetaphd/frohmod"
+
+[project.scripts]
+frohmod = "frohmod.cli:main"
+
+[tool.setuptools]
+packages = ["frohmod"]

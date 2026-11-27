@@ -1,0 +1,12 @@
+cff-version: 1.2.0
+message: "If you use this software, please cite it as follows."
+title: "frohmod: Mode-resolved analysis of Fröhlich scattering from VASP phonon calculations"
+version: 0.1.0
+date-released: 2026-11-25
+license: MIT
+repository-code: "https://github.com/shwetaphd/frohmod"
+authors:
+  - family-names: Choudhary
+    given-names: Shweta
+    affiliation: "Department of Chemistry, Indian Institute of Technology Roorkee, India"
+    orcid: "https://orcid.org/0000-0002-6449-9459"
