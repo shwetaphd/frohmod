@@ -11,7 +11,7 @@ import sys
 
 import numpy as np
 
-longest = 2.0  # length of the longest arrow, in A
+longest = 0.5  # length of the longest arrow, in A
 
 
 def ascii_to_vesta(ascii_file, vesta_in, vesta_out):
@@ -44,7 +44,7 @@ def ascii_to_vesta(ascii_file, vesta_in, vesta_out):
             continue
         k += 1
         vectr += [f"{k:4d} {c[0]:10.5f} {c[1]:10.5f} {c[2]:10.5f} 0", f"{i:5d}  0  0  0  0", " 0 0 0 0 0"]
-        vectt.append(f"{k:4d}  0.300   0   0   0 1")  # thickness, then colour R G B: black
+        vectt.append(f"{k:4d}  0.200   0   0   0 1")  # thickness, then colour R G B: black
     vectr.append(" 0 0 0 0 0")
     vectt.append(" 0 0 0 0 0")
 
