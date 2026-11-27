@@ -1,4 +1,4 @@
-"""The mode-resolved Frohlich analysis at Gamma, steps 1-7 (the same steps as in the README)."""
+"""The mode-resolved Frohlich analysis at Gamma"""
 import numpy as np
 
 thz = 15.633302      # sqrt(eV / A^2 / amu) -> THz
