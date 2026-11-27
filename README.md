@@ -110,8 +110,6 @@ Frohlich coupling at 300 K from all LO modes along (1 0 0), (0 1 0), (0 0 1):  B
 | Bi, Br, O (meV) | Each element's part of \|g\|² × n: \|g\|² × n times the element's share of the mode's vibration. |
 | Last line | Each element's share (%): its parts added over all LO modes of all directions, divided by the total. |
 
-The O mode couples about 4.5 times more strongly per phonon, but at 300 K the soft Br mode has about six times more phonons, so it contributes more overall.
-
 Modes below 3 % of a direction's total \|g\|² × n are not printed; all modes are kept in `modes.dat`. The last line depends on the directions given: along x only, BiOBr gives Bi 16.8 %, Br 43.3 %, O 39.9 %.
 
 ### Identifying and visualizing the dominant LO modes
